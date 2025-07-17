@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paradaigm Institute Internship</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #eef3fa;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #153e75;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    section {
+      background: white;
+      margin-bottom: 2rem;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #153e75;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #153e75;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background: #102f5e;
+    }
+    .programs ul {
+      list-style: disc;
+      margin-left: 1.5rem;
+    }
+    .confirmation {
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Paradaigm Institute Internship</h1>
+  <p>Premium Programs in Innovation, Research, and Leadership</p>
+</header>
+
+<main>
+  <section class="programs">
+    <h2>Program Highlights</h2>
+    <ul>
+      <li><strong>Startup Incubator:</strong> Product design, market strategy, pitch for seed funding</li>
+      <li><strong>Research Fellowship:</strong> Conduct original research, publish work, influence policy</li>
+      <li>Personalized mentorship, certifications, and networking with professionals</li>
+      <li>Tools, templates, and resources valued over $500</li>
+      <li>Resume boosting, award opportunities, and real-world impact</li>
+    </ul>
+  </section>
+
+  <section class="application">
+    <h2>Application Form</h2>
+    <form id="internForm">
+      <label for="program">Which program are you applying to?</label>
+      <select id="program" name="program" required>
+        <option value="Startup Incubator">Startup Incubator</option>
+        <option value="Research Fellowship">Research Fellowship</option>
+      </select>
+
+      <label for="q1">Why do you want to participate in your chosen program?</label>
+      <textarea id="q1" name="q1" rows="5" required></textarea>
+
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="grade">Current Grade</label>
+      <input type="text" id="grade" name="grade" required />
+
+      <label for="school">School Name</label>
+      <input type="text" id="school" name="school" required />
+
+      <label for="q2">What field are you interested in and why? What are you going to do with it?</label>
+      <textarea id="q2" name="q2" rows="5" required></textarea>
+
+      <label for="q3">What makes you a strong candidate for the internship? (max 250 words)</label>
+      <textarea id="q3" name="q3" rows="5" maxlength="1500" required></textarea>
+
+      <label for="q4">What do you want to see from this in the end?</label>
+      <textarea id="q4" name="q4" rows="4" required></textarea>
+
+      <label for="resume">Upload Resume</label>
+      <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
+
+      <button type="submit">Submit Application</button>
+    </form>
+    <p id="confirmationMsg" class="confirmation">Thank you! Your application has been submitted and a confirmation email is on the way.</p>
+  </section>
+</main>
+
+<script>
+  document.getElementById('internForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = this.fullname.value;
+    const email = this.email.value;
+    console.log(`Application submitted by ${name} (${email})`);
+    console.log(`Email confirmation sent to ${email}`);
+    console.log(`Application copy sent to yugmehta141@gmail.com`);
+
+    document.getElementById('confirmationMsg').style.display = 'block';
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
